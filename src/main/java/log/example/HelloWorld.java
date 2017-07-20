@@ -6,7 +6,7 @@ package log.example;
 public class HelloWorld {
 
     public static void main(String[] args) {
-        Car car = new Car();
+        Car car = new CarImpl();
         car.drive();
         car.stop();
     }
