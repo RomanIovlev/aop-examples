@@ -9,11 +9,14 @@ import org.springframework.stereotype.Component;
 @Log
 public class CarImpl implements Car {
     @Log
+    @Override
     public void drive() {
-        System.out.println("drive method executed");
+//        System.out.println("drive method executed");
     }
+
     @Log
+    @Override
     public void stop() {
-        System.out.println("stop method executed");
+//        System.out.println("stop method executed");
     }
 }
