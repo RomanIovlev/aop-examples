@@ -11,12 +11,10 @@ public class CarImpl implements Car {
     @Log
     @Override
     public void drive() {
-//        System.out.println("drive method executed");
     }
 
     @Log
     @Override
     public void stop() {
-//        System.out.println("stop method executed");
     }
 }
