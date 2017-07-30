@@ -1,3 +1,10 @@
-.gitignore
-.idea
-target
+*.iml
+.idea/
+target/
+*.zip
+*.exe
+.logs/
+.log/
+*.xlsx
+bin/
+obj/
