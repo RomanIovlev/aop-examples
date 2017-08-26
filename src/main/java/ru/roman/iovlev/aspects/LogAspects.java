@@ -4,6 +4,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 
+import java.lang.reflect.InvocationTargetException;
+
 import static java.lang.String.format;
 import static ru.roman.iovlev.aspects.Logger.write;
 
@@ -35,7 +37,7 @@ public class LogAspects {
 
     @AfterReturning(pointcut = "anyMethod() && withStepAnnotation()", returning = "result")
     public void stepStop(JoinPoint joinPoint, Object result) {
-        write(format("After step '%s'", createTitle(joinPoint)));
+        write(format("After step '%s' with result '%s'", createTitle(joinPoint), result));
     }
 
     private String createTitle(JoinPoint joinPoint) {

@@ -10,7 +10,7 @@ import static ru.roman.iovlev.aspects.Logger.*;
 /**
  * Created by Roman_Iovlev on 7/30/2017.
  */
-public class AspectTest {
+public class LogTest {
     private TestClass test = new TestClass();
 
     @Before
@@ -21,9 +21,10 @@ public class AspectTest {
     @Test
     public void simpleLogTest() {
         test.method();
-        Assert.assertEquals(2, records.size());
+        test.someAction();
+        Assert.assertEquals(4, records.size());
         Assert.assertEquals("Before step 'method'", records.get(0));
-        Assert.assertEquals("After step 'method'", records.get(1));
+        Assert.assertEquals("After step 'method' with result 'null'", records.get(1));
     }
 
     @Test
@@ -42,7 +43,7 @@ public class AspectTest {
         test.methodWithTitle();
         Assert.assertEquals(2, records.size());
         Assert.assertEquals("Before step 'Test title'", records.get(0));
-        Assert.assertEquals("After step 'Test title'", records.get(1));
+        Assert.assertEquals("After step 'Test title' with result 'null'", records.get(1));
     }
 
     @Test
@@ -50,7 +51,7 @@ public class AspectTest {
         TestClass.staticMethod();
         Assert.assertEquals(2, records.size());
         Assert.assertEquals("Before step 'staticMethod'", records.get(0));
-        Assert.assertEquals("After step 'staticMethod'", records.get(1));
+        Assert.assertEquals("After step 'staticMethod' with result 'null'", records.get(1));
     }
 
 }
